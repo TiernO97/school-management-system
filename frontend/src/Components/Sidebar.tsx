@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Calendar, CheckSquare, Clock, Menu, User, Users } from "react-feather";
 import { Link, useHistory } from "react-router-dom";
 import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap";
@@ -14,6 +14,14 @@ const Sidebar:React.FC = props => {
         password: '123456'
     }
 
+    useEffect(() => {
+      document.querySelector('.mobile-menu-button')?.addEventListener('click',() => {
+        const sidebar = document.querySelector('.sidebar')
+
+        sidebar?.classList.toggle('-translate-x-full')
+      })
+    })
+
     const [dropDown, setDropDown] = useState(false)
 
     const logoutHandler = () => {
@@ -26,7 +34,7 @@ const Sidebar:React.FC = props => {
         <div className='bg-blue-900 text-blue-100 flex justify-between md:hidden'>
           {/* Logo */}
           <a href="/" className="block p-4 text-white font-bold">
-            Cafe
+            School Management System
           </a>
 
           {/* Menu Button */}
