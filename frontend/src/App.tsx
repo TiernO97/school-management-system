@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Redirect, Route, Switch, useHistory, withRouter } from "react-router-dom";
 import "./assets/main.css";
 import { Calendar, CheckSquare, Clock, Menu, User, Users } from "react-feather";
 import { Link } from "react-router-dom";
@@ -11,8 +11,29 @@ import ManageYears from "./Pages/ManageYears";
 import ManageTimetables from "./Pages/ManageTimetables";
 import ManageGrades from "./Pages/ManageGrades";
 import Dashboard from "./Pages/Dashboard";
+import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap";
+import { useState } from "react";
+import Login from "./Pages/Login";
+import Register from "./Pages/Register";
 
 const App: React.FC = () => {
+
+  const history = useHistory()
+
+  const userInfo = {
+    _id: '12345678',
+    isAdmin: true,
+    username: 'MyUser123',
+    email: "admin@example.com",
+    password: '123456'
+  }
+
+  const [dropDown, setDropDown] = useState(false)
+
+  const logoutHandler = () => {
+    history.push('/login')
+  }
+
   return (
     <Router>
       <div className="relative min-h-screen md:flex">
@@ -68,21 +89,63 @@ const App: React.FC = () => {
               <CheckSquare className='w-6 h-6 flex mr-2' />
               Grades
             </Link>
+
           </nav>
         </div>
 
         {/* Content */}
-        <div className="flex-1 p-10">
-          <Switch>
-            <main>
-              <Route path="/manage-students" component={ManageStudents} exact />
-              <Route path="/manage-staff" component={ManageStaff} exact />
-              <Route path="/manage-years" component={ManageYears} exact />
-              <Route path="/manage-timetables" component={ManageTimetables} exact />
-              <Route path="/manage-grades" component={ManageGrades} exact />
-              <Route path='/' component={Dashboard} exact />
-            </main>
-          </Switch>
+        <div className="flex-1">
+          <div className=' flex justify-end w-full h-12 bg-white'>
+            <div className="justify-end mt-2 px-2 text-gray-800 text-lg mr-16">
+              {userInfo ? (
+                <>
+                  <Dropdown isOpen={dropDown} toggle={() => setDropDown(!dropDown)}>
+                    <DropdownToggle className='text-gray-800 text-xl m-0 p-0 hover:no-underline' color='link'>
+                      {userInfo.username}
+                    </DropdownToggle>
+                    <DropdownMenu>
+                      <DropdownItem>
+                        <Link className='hover:no-underline' to={`/profile/${userInfo._id}`}>
+                          Profile
+                        </Link>
+                      </DropdownItem>
+                      <DropdownItem>
+                        <Link className='hover:no-underline' to='/manage-users'>
+                          Manage Users
+                        </Link>
+                      </DropdownItem>
+                      <DropdownItem divider />
+                      <DropdownItem onClick={logoutHandler}>
+                        Log Out
+                      </DropdownItem>
+                    </DropdownMenu>
+                  </Dropdown>
+                </>
+              ) : (
+                <p>
+                  You are not signed in. You can sign in <Link className='text-info' to='/login'>here</Link>
+                </p>
+              )}
+            </div>
+          </div>
+          <div className='p-10'>
+            {userInfo ? (
+              <Switch>
+                <main>
+                  <Route path="/manage-students" component={ManageStudents} exact />
+                  <Route path="/manage-staff" component={ManageStaff} exact />
+                  <Route path="/manage-years" component={ManageYears} exact />
+                  <Route path="/manage-timetables" component={ManageTimetables} exact />
+                  <Route path="/manage-grades" component={ManageGrades} exact />
+                  <Route path="/login" component={Login} exact />
+                  <Route path="/register" component={Register} exact />
+                  <Redirect from='/' to='/manage-students' exact />
+                </main>
+              </Switch>
+            ) : (
+              <p>Please sign in above</p>
+            )}
+          </div>
         </div>
       </div>
     </Router>
