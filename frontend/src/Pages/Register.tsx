@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
+import { Link } from 'react-router-dom'
 import { Alert, Button, Card, CardBody, Col, Form, FormGroup, Input, Label, Row } from 'reactstrap'
 
 const Register: React.FC = () => {
@@ -63,6 +64,7 @@ const Register: React.FC = () => {
                                     <Input type='password' value={password2} onChange={e => setPassword2(e.target.value)} required />
                                 </FormGroup>
                                 <Button type='submit' className='btn-block' color='primary'>Register</Button>
+                                <p className='text-center text-sm text-gray-500 pt-4'>Already have an account? Log in <Link className='text-success' to='/login'>here</Link></p>
                             </Form>
                         </Col>
                     </Row>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
+import { Link } from 'react-router-dom'
 import { Button, Card, CardBody, Col, Form, FormGroup, Input, Label, Row } from 'reactstrap'
 
 const Login: React.FC = () => {
@@ -39,6 +40,7 @@ const Login: React.FC = () => {
                                     <Input type='password' />
                                 </FormGroup>
                                 <Button type='submit' className='btn-block' color='primary'>Log In</Button>
+                                <p className='text-center text-sm text-gray-500 pt-4'>Do not have an account? Register <Link className='text-success' to='/register'>here</Link></p>
                             </Form>
                         </Col>
                     </Row>
