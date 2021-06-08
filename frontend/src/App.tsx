@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Redirect, Route, Switch, useHistory, withRouter } from "react-router-dom";
+import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
 import "./assets/main.css";
 
 // Be sure to include styles at some point, probably during your bootstraping

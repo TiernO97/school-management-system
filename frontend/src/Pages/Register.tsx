@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import { useHistory } from 'react-router'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Alert, Button, Card, CardBody, Col, Form, FormGroup, Input, Label, Row } from 'reactstrap'
 
 const Register: React.FC = () => {
 
-    const history = useHistory()
-
-    const [loggedIn, setLoggedIn] = useState(false)
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
 
@@ -16,12 +12,6 @@ const Register: React.FC = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [password2, setPassword2] = useState('')
-
-    useEffect(() => {
-        if(loggedIn) {
-            history.push('/') 
-        }
-    }, [loggedIn, history])
 
     const submitHandler = (e: React.SyntheticEvent) => {
         e.preventDefault()

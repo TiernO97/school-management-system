@@ -1,19 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { useHistory } from 'react-router'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Card, CardBody, Col, Form, FormGroup, Input, Label, Row } from 'reactstrap'
 
 const Login: React.FC = () => {
-
-    const history = useHistory()
-
-    const [loggedIn, setLoggedIn] = useState(false)
-
-    useEffect(() => {
-        if(loggedIn) {
-            history.push('/') 
-        }
-    }, [loggedIn, history])
 
     const submitHandler = (e: React.SyntheticEvent) => {
         e.preventDefault()
@@ -21,7 +10,7 @@ const Login: React.FC = () => {
     }
 
     return (
-        <div className='flex-1 lg:mt-32 md:mt-32 sm:mt-16'>
+        <div className='flex-1 mt-16'>
             <Col lg={{ size: 8, offset: 2}} sm={{ size: 10, offset: 1}}>
             <Card className='pb-8 shadow'>
                 <CardBody>
