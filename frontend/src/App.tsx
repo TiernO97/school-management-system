@@ -12,6 +12,7 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Sidebar from "./Components/Sidebar";
 import './App.css'
+import Dashboard from "./Pages/Dashboard";
 
 const App: React.FC = () => {
 
@@ -27,7 +28,7 @@ const App: React.FC = () => {
               <Route path="/manage-grades" component={ManageGrades} exact />
               <Route path="/login" component={Login} exact />
               <Route path="/register" component={Register} exact />
-              <Redirect from='/' to='/manage-students' exact />
+              <Route path='/' component={Dashboard} exact />
             </main>
           </Switch>
       </Sidebar>

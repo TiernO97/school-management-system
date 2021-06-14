@@ -1,7 +1,4 @@
-import React from 'react'
-import { Users } from 'react-feather'
-import { Card, CardBody, CardTitle, CardText, Col, Row, CardHeader } from 'reactstrap'
-import './Dashboard.css'
+import { Card, CardBody, CardText, Col, Row } from 'reactstrap'
 
 const Dashboard = () => {
     return (
@@ -9,38 +6,42 @@ const Dashboard = () => {
         <Card className='shadow'>
             <CardBody>
                 <Row>
-                    <Col lg={4} sm={12}>
-                        <Card className='bg-primary border-none text-light'>
+                    <Col lg={3} sm={12}>
+                        <Card className='bg-gradient-to-br from-green-400 to-blue-600 border-none text-light pt-12 sm:mb-2'>
                             <CardBody>   
-                                <CardText className='pb-2'>
-                                    <strong>Students</strong>
-                                </CardText>
                                 <CardText>
-                                    <p>7653 students enrolled.</p>
+                                    <p className='font-weight-bold'>Students</p>
+                                    7653 students enrolled
                                 </CardText>
                             </CardBody>
                         </Card>
                     </Col>
-                    <Col lg={4} sm={12}>
-                        <Card className='bg-success border-none text-light'>
+                    <Col lg={3} sm={12}>
+                        <Card className='bg-gradient-to-br from-red-400 to-purple-600 border-none text-light pt-12 sm:mb-2'>
                             <CardBody>   
-                                <CardText className='pb-2'>
-                                    <strong>Staff</strong>
-                                </CardText>
                                 <CardText>
-                                    <p>45 staff employed.</p>
+                                    <p className='font-weight-bold'>Staff</p>
+                                    45 staff employed
                                 </CardText>
                             </CardBody>
                         </Card>
                     </Col>
-                    <Col lg={4} sm={12}>
-                        <Card className='bg-danger border-none text-light'>
+                    <Col lg={3} sm={12}>
+                        <Card className='bg-gradient-to-br from-yellow-400 to-red-600 border-none text-light pt-12 sm:mb-2'>
                             <CardBody>   
-                                <CardText className='pb-2'>
-                                    <strong>Classes</strong>
-                                </CardText>
                                 <CardText>
+                                    <p className='font-weight-bold'>Classes</p>
                                     <p>17 classes.</p>
+                                </CardText>
+                            </CardBody>
+                        </Card>
+                    </Col>
+                    <Col lg={3} sm={12}>
+                        <Card className='bg-gradient-to-br from-red-400 to-red-600 border-none text-light pt-12 sm:mb-2'>
+                            <CardBody>   
+                                <CardText>
+                                    <p className='font-weight-bold'>Events</p>
+                                    12 Upcoming Events
                                 </CardText>
                             </CardBody>
                         </Card>

@@ -41,7 +41,7 @@ const Sidebar:React.FC = props => {
           <button className='mobile-menu-button p-4 focus:outline-none focus:bg-blue-600'><Menu className='h-5 w-5' /></button>
         </div>
         {/* Sidebar */}
-        <div className="sidebar bg-blue-900 text-white w-64 space-y-6 py-7 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
+        <div className="sidebar bg-gradient-to-b from-blue-900 to-blue-500 text-white w-64 space-y-6 py-7 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
           <Link className="flex items-center space-x-2 px-2 ml-2 hover:text-white hover:no-underline" to="/">
             <span className="text-2xl font-bold">School Management System</span>
           </Link>

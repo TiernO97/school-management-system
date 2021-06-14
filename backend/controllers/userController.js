@@ -6,7 +6,7 @@ import sgMail from '@sendgrid/mail'
 import dotenv from 'dotenv'
 
 dotenv.config()
-sgMail.setApiKey('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')
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 const authUser = asyncHandler(async (req, res) => {
     const { email, password } = req.body
