@@ -6,7 +6,7 @@ const Dashboard = () => {
         <Card className='shadow'>
             <CardBody>
                 <Row>
-                    <Col lg={3} sm={12}>
+                    <Col lg={3} md={6} sm={12}>
                         <Card className='bg-gradient-to-br from-green-400 to-blue-600 border-none text-light pt-16 sm:mb-2'>
                             <CardBody>   
                                 <CardText>
@@ -16,7 +16,7 @@ const Dashboard = () => {
                             </CardBody>
                         </Card>
                     </Col>
-                    <Col lg={3} sm={12}>
+                    <Col lg={3} md={6} sm={12}>
                         <Card className='bg-gradient-to-br from-red-400 to-purple-600 border-none text-light pt-16 sm:mb-2'>
                             <CardBody>   
                                 <CardText>
@@ -26,7 +26,7 @@ const Dashboard = () => {
                             </CardBody>
                         </Card>
                     </Col>
-                    <Col lg={3} sm={12}>
+                    <Col lg={3} md={6} sm={12}>
                         <Card className='bg-gradient-to-br from-yellow-400 to-red-600 border-none text-light pt-16 sm:mb-2'>
                             <CardBody>   
                                 <CardText>
@@ -36,7 +36,7 @@ const Dashboard = () => {
                             </CardBody>
                         </Card>
                     </Col>
-                    <Col lg={3} sm={12}>
+                    <Col lg={3} md={6} sm={12}>
                         <Card className='bg-gradient-to-br from-red-400 to-red-600 border-none text-light pt-16 sm:mb-2'>
                             <CardBody>   
                                 <CardText>

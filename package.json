@@ -35,6 +35,10 @@
     "mongoose": "^5.12.11",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
+    "react-redux": "^7.2.4",
+    "redux": "^4.1.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.3.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

@@ -1,8 +1,5 @@
-import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./assets/main.css";
-
-// Be sure to include styles at some point, probably during your bootstraping
-import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 import ManageStudents from "./Pages/ManageStudents";
 import ManageStaff from "./Pages/ManageStaff";
 import ManageYears from "./Pages/ManageYears";
