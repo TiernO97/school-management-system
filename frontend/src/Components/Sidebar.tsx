@@ -88,12 +88,12 @@ const Sidebar:React.FC = props => {
 
         {/* Content */}
         <div className="flex-1">
-          <div className=' flex justify-end w-full h-12 bg-white'>
-            <div className="justify-end mt-2 px-2 text-gray-800 text-lg mr-16">
+          <div className=' flex justify-end min-w-screen h-12 bg-gray-200 border-b border-gray-200 items-center'>
+            <div className="px-2 text-gray-800 mr-16">
               {userInfo ? (
                 <>
                   <Dropdown isOpen={dropDown} toggle={() => setDropDown(!dropDown)}>
-                    <DropdownToggle className='text-gray-800 text-xl m-0 p-0 hover:no-underline' color='link'>
+                    <DropdownToggle className='bg-gray-100 text-gray-800 text-md px-3 py-1 rounded-full hover:no-underline' color='link'>
                       {userInfo.username}
                     </DropdownToggle>
                     <DropdownMenu>
