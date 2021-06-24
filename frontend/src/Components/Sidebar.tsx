@@ -1,18 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { Calendar, CheckSquare, Clock, Menu, User, Users } from "react-feather";
+import { useSelector } from 'react-redux';
 import { Link, useHistory } from "react-router-dom";
 import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap";
 
 const Sidebar:React.FC = props => {
     const history = useHistory()
 
-    const userInfo = {
-        _id: '12345678',
-        isAdmin: true,
-        username: 'MyUser123',
-        email: "admin@example.com",
-        password: '123456'
-    }
+    const userLogin = useSelector((state:any) => state.userLogin)
+    const { userInfo } = userLogin
 
     useEffect(() => {
       document.querySelector('.mobile-menu-button')?.addEventListener('click',() => {
